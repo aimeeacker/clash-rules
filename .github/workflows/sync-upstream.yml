@@ -1,0 +1,47 @@
+name: Sync upstream release to fork
+
+on:
+  workflow_dispatch:
+  schedule:
+    # UTC+8 Friday 23:59 = UTC Friday 15:59
+    - cron: "59 15 * * 5"
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Configure upstream remote
+        run: |
+          git remote add upstream https://github.com/Loyalsoldier/clash-rules.git || true
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Sync upstream master into fork master (non-destructive)
+        run: |
+          git fetch upstream master
+          git fetch origin master
+          git checkout master
+          if ! git merge --ff-only upstream/master; then
+            echo "Fast-forward not possible, create merge commit to keep local history."
+            git merge --no-edit upstream/master
+          fi
+          if ! git diff --quiet origin/master; then
+            git push origin master
+          else
+            echo "Master branch is already up to date."
+          fi
+
+      - name: Sync upstream release branch
+        run: |
+          git fetch upstream release
+          git checkout -B release upstream/release
+          git push --force-with-lease origin release

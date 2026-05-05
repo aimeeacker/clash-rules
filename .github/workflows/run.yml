@@ -1,13 +1,8 @@
 name: Generate RULE-SET for Premium Edition of Clash
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "30 22 * * *"
-  push:
-    branches:
-      - master
-    paths-ignore:
-      - "**/README.md"
+# 仅保留手动触发，避免在 fork 中自动发布。
+# 如无需求，可将本文件直接移除或保持手动触发。
 permissions:
   contents: write
 jobs:
