@@ -1,4 +1,4 @@
-name: Sync upstream release to fork
+name: Sync upstream master to fork
 
 on:
   workflow_dispatch:
@@ -39,9 +39,3 @@ jobs:
           else
             echo "Master branch is already up to date."
           fi
-
-      - name: Sync upstream release branch
-        run: |
-          git fetch upstream release
-          git checkout -B release upstream/release
-          git push --force-with-lease origin release
