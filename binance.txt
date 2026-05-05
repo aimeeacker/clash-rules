@@ -1,0 +1,12 @@
+payload:
+  - 'bnbstatic.com'
+  - 'binance.com'
+  - 'binance.info'
+  - 'binance.click'
+  - 'bsappapi.com'
+  - 'mokexapp.org'
+  - 'mokexapp.me'
+  - 'asterdex.com'
+  - 'saasexch.com'
+  - 'saasexch.cc'
+  - 'saasexch.info'
