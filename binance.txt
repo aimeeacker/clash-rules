@@ -1,12 +1,12 @@
 payload:
-  - 'DOMAIN-SUFFIX,bnbstatic.com'
-  - 'DOMAIN-SUFFIX,binance.com'
-  - 'DOMAIN-SUFFIX,binance.info'
-  - 'DOMAIN-SUFFIX,binance.click'
-  - 'DOMAIN-SUFFIX,bsappapi.com'
-  - 'DOMAIN-SUFFIX,mokexapp.org'
-  - 'DOMAIN-SUFFIX,mokexapp.me'
-  - 'DOMAIN-SUFFIX,asterdex.com'
-  - 'DOMAIN-SUFFIX,saasexch.com'
-  - 'DOMAIN-SUFFIX,saasexch.cc'
-  - 'DOMAIN-SUFFIX,saasexch.info'
+  - DOMAIN-SUFFIX,bnbstatic.com
+  - DOMAIN-SUFFIX,binance.com
+  - DOMAIN-SUFFIX,binance.info
+  - DOMAIN-SUFFIX,binance.click
+  - DOMAIN-SUFFIX,bsappapi.com
+  - DOMAIN-SUFFIX,mokexapp.org
+  - DOMAIN-SUFFIX,mokexapp.me
+  - DOMAIN-SUFFIX,asterdex.com
+  - DOMAIN-SUFFIX,saasexch.com
+  - DOMAIN-SUFFIX,saasexch.cc
+  - DOMAIN-SUFFIX,saasexch.info
