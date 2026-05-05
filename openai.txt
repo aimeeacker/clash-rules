@@ -1,4 +1,9 @@
 payload:
+  - '+.chatgpt.com'
+  - '+.openai.com'
+  - '+.auth0.com'
+  - '+.oaistatic.com'
+  - '+.oaiusercontent.com'
   - 'chatgpt.com'
   - 'openai.com'
   - 'auth0.com'
