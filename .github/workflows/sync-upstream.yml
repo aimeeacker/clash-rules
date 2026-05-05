@@ -59,9 +59,9 @@ jobs:
             git show "upstream/release:${file}" > "${file}"
           done
 
-          # Only create a commit if any rule file changed compared with repository state.
-          if ! git diff --quiet -- "${RULE_FILES[@]}"; then
-            git add "${RULE_FILES[@]}"
+          # Only create a commit if release rule files are changed.
+          git add "${RULE_FILES[@]}"
+          if ! git diff --cached --quiet -- "${RULE_FILES[@]}"; then
             git commit -m "chore: sync release rule snapshots to master"
           fi
 
