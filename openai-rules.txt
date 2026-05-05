@@ -3,3 +3,15 @@ DOMAIN-SUFFIX,openai.com,openai
 DOMAIN-SUFFIX,auth0.com,openai
 DOMAIN-SUFFIX,oaistatic.com,openai
 DOMAIN-SUFFIX,oaiusercontent.com,openai
+DOMAIN-SUFFIX,bnbstatic.com,binance
+DOMAIN-SUFFIX,binance.com,binance
+DOMAIN-SUFFIX,binance.info,binance
+DOMAIN-SUFFIX,binance.click,binance
+DOMAIN-SUFFIX,bsappapi.com,binance
+DOMAIN-SUFFIX,mokexapp.org,binance
+DOMAIN-SUFFIX,mokexapp.me,binance
+DOMAIN-SUFFIX,asterdex.com,binance
+DOMAIN-SUFFIX,saasexch.com,binance
+DOMAIN-SUFFIX,saasexch.cc,binance
+DOMAIN-SUFFIX,saasexch.info,binance
+DOMAIN-KEYWORD,saasexch,binance
