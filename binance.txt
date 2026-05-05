@@ -10,7 +10,3 @@ payload:
   - 'DOMAIN-SUFFIX,saasexch.com'
   - 'DOMAIN-SUFFIX,saasexch.cc'
   - 'DOMAIN-SUFFIX,saasexch.info'
-  - 'DOMAIN-SUFFIX,fstream5.asterdex.com'
-  - 'DOMAIN-SUFFIX,api.saasexch.com'
-  - 'DOMAIN-SUFFIX,api.saasexch.cc'
-  - 'DOMAIN-SUFFIX,api.saasexch.info'
