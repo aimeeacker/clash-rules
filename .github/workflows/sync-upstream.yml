@@ -24,16 +24,49 @@ jobs:
           git remote add upstream https://github.com/Loyalsoldier/clash-rules.git || true
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch upstream master
+          git fetch upstream release
+          git fetch origin master
+          git checkout master
 
       - name: Sync upstream master into fork master (non-destructive)
         run: |
-          git fetch upstream master
-          git fetch origin master
-          git checkout master
           if ! git merge --ff-only upstream/master; then
             echo "Fast-forward not possible, create merge commit to keep local history."
             git merge --no-edit upstream/master
           fi
+
+      - name: Sync rule files from upstream release branch
+        run: |
+          RULE_FILES=(
+            "apple.txt"
+            "applications.txt"
+            "cncidr.txt"
+            "direct.txt"
+            "gfw.txt"
+            "google.txt"
+            "greatfire.txt"
+            "icloud.txt"
+            "lancidr.txt"
+            "private.txt"
+            "proxy.txt"
+            "reject.txt"
+            "telegramcidr.txt"
+            "tld-not-cn.txt"
+          )
+
+          for file in "${RULE_FILES[@]}"; do
+            git show "upstream/release:${file}" > "${file}"
+          done
+
+          # Only create a commit if any rule file changed compared with repository state.
+          if ! git diff --quiet -- "${RULE_FILES[@]}"; then
+            git add "${RULE_FILES[@]}"
+            git commit -m "chore: sync release rule snapshots to master"
+          fi
+
+      - name: Push upstream changes
+        run: |
           if ! git diff --quiet origin/master; then
             git push origin master
           else
